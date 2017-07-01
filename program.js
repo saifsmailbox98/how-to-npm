@@ -1,18 +1,13 @@
-var mymodule = require('./mymodule.js') 
+var http = require('http');
 
-var myList = mymodule(process.argv[2],process.argv[3],printList);
-
-function printList(err, data){
+http.get(process.argv[2],function(response){
     
- if(err)  
- 
- {
-     console.log(err);
- 
- }
- else{
-      data.map(n => console.log(n));
- }
+     response.on("data", function (data) { 
+         
+         data=data.toString();
+         
+         console.log(data);
+     });
     
     
-}
+});
