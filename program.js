@@ -1,51 +1,19 @@
-var http = require('http');
+var net = require('net');
 
-http.get(process.argv[2],function(response){
-    
-    var string="";
-    
-     response.on("data", function (data) { 
-         
-         data=data.toString();
-         string+=data;
-     });
-     
-    response.on("end", function(){
-   
-        console.log(string);
-        http.get(process.argv[3],function(response){
-    
-    var string="";
-    
-     response.on("data", function (data) { 
-         
-         data=data.toString();
-         string+=data;
-     });
-     
-    response.on("end", function(){
-   
-        console.log(string);
-        http.get(process.argv[4],function(response){
-    
-    var string="";
-    
-     response.on("data", function (data) { 
-         
-         data=data.toString();
-         string+=data;
-     });
-     
-    response.on("end", function(){
-   
-        console.log(string);
-        
-    });
-    
+var server = net.createServer(function(socket){
+    var date = new Date();
+    var yyyy = date.getFullYear();
+    var mm = date.getMonth()+1;
+    mm = mm>9?mm:"0"+mm;
+    var dd = date.getDate()>9?date.getDate():"0"+date.getDate();
+    var hh = date.getHours();
+    hh = hh>9?hh:"0"+hh;
+    var m = date.getMinutes();
+    m = m>9?m:"0"+m;
+    var str = yyyy+"-"+mm+"-"+dd+" "+hh+":"+m;
+    //console.log(str);
+    socket.end(str+"\n");
+
 });
-    });
-    
-});
-    });
-    
-});
+
+server.listen(process.argv[2]);
