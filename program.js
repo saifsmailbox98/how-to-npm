@@ -1,8 +1,12 @@
     var fs = require('fs');
-fs.readFile(process.argv[2],'utf8',function(err,data){
+fs.readdir(process.argv[2],function(err,list){
     
     if(!err)
     {
-        console.log(data.split("\n").length - 1);
+        var r = new RegExp("\."+process.argv[3]+"$");
+        list = list.filter(n => r.test(n));
+        list.map(function(n){ console.log(n);})
+    
     }
+
 })
