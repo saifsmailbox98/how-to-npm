@@ -1,0 +1,63 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/home/ubuntu/.nvm/versions/node/v4.1.2/bin/node',
+1 verbose cli   '/home/ubuntu/.nvm/versions/node/v4.1.2/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'express@>=4.0.0' ]
+2 info using npm@2.14.4
+3 info using node@v4.1.2
+4 verbose install initial load of /home/ubuntu/workspace/how-to-npm/package.json
+5 verbose readDependencies loading dependencies from /home/ubuntu/workspace/how-to-npm/package.json
+6 silly cache add args [ 'express@>=4.0.0', null ]
+7 verbose cache add spec express@>=4.0.0
+8 silly cache add parsed spec Result {
+8 silly cache add   raw: 'express@>=4.0.0',
+8 silly cache add   scope: null,
+8 silly cache add   name: 'express',
+8 silly cache add   rawSpec: '>=4.0.0',
+8 silly cache add   spec: '>=4.0.0',
+8 silly cache add   type: 'range' }
+9 silly addNamed express@>=4.0.0
+10 verbose addNamed ">=4.0.0" is a valid semver range for express
+11 silly addNameRange { name: 'express', range: '>=4.0.0', hasData: false }
+12 silly mapToRegistry name express
+13 silly mapToRegistry using default registry
+14 silly mapToRegistry registry http://localhost:15443/
+15 silly mapToRegistry uri http://localhost:15443/express
+16 verbose addNameRange registry:http://localhost:15443/express not in flight; fetching
+17 verbose request uri http://localhost:15443/express
+18 verbose request no auth needed
+19 info attempt registry request try #1 at 6:33:12 PM
+20 verbose request id 8c7f975da0547d44
+21 http request GET http://localhost:15443/express
+22 info retry will retry, error on last attempt: Error: connect ECONNREFUSED 127.0.0.1:15443
+23 info attempt registry request try #2 at 6:33:22 PM
+24 http request GET http://localhost:15443/express
+25 info retry will retry, error on last attempt: Error: connect ECONNREFUSED 127.0.0.1:15443
+26 info attempt registry request try #3 at 6:34:22 PM
+27 http request GET http://localhost:15443/express
+28 verbose stack Error: connect ECONNREFUSED 127.0.0.1:15443
+28 verbose stack     at Object.exports._errnoException (util.js:849:11)
+28 verbose stack     at exports._exceptionWithHostPort (util.js:872:20)
+28 verbose stack     at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1060:14)
+29 verbose cwd /home/ubuntu/workspace/how-to-npm
+30 error Linux 4.9.17-c9
+31 error argv "/home/ubuntu/.nvm/versions/node/v4.1.2/bin/node" "/home/ubuntu/.nvm/versions/node/v4.1.2/bin/npm" "install" "express@>=4.0.0"
+32 error node v4.1.2
+33 error npm  v2.14.4
+34 error code ECONNREFUSED
+35 error errno ECONNREFUSED
+36 error syscall connect
+37 error Error: connect ECONNREFUSED 127.0.0.1:15443
+37 error     at Object.exports._errnoException (util.js:849:11)
+37 error     at exports._exceptionWithHostPort (util.js:872:20)
+37 error     at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1060:14)
+37 error  { [Error: connect ECONNREFUSED 127.0.0.1:15443]
+37 error   code: 'ECONNREFUSED',
+37 error   errno: 'ECONNREFUSED',
+37 error   syscall: 'connect',
+37 error   address: '127.0.0.1',
+37 error   port: 15443,
+37 error   parent: '@saifsmailbox98/how-to-npm' }
+38 error If you are behind a proxy, please make sure that the
+38 error 'proxy' config is set properly.  See: 'npm help config'
+39 verbose exit [ 1, true ]
