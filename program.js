@@ -2,8 +2,13 @@
      var fs = require('fs');
      
      var server = http.createServer(function (request, response) { 
-          fs.createReadStream(process.argv[3],'utf8').pipe(response);
-     })  
-     
+   
+          request.on('data', function (data) {
+                    data=data.toString();
+               response.write(data.toUpperCase(),'utf8');
+            
+          });
+
+     }); 
      
      server.listen(process.argv[2]);  
