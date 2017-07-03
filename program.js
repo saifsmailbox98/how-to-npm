@@ -2,9 +2,16 @@
     
     var app = express();
     
-    app.get('/home', function(request, response) {
-      response.end('Hello World!');
+    app.use(express.static(process.argv[3]||"index.html".join(__dirname, 'public')));
+    
+    app.get('/', function(request, response) {
+      
+     
+      
+      
+      
+      response.end();
     })
     
-    
+  
     app.listen(process.argv[2]);
